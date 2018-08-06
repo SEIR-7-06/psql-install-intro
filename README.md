@@ -7,7 +7,6 @@
 
 #### Installing Postgres
 
-<img src='http://postgresapp.com/img/PostgresAppIconLarge.png'>
 
 1.  Run the command `brew install postgres`
 2.  Let's install [Post gres app](https://postgresapp.com/)
