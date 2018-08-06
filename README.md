@@ -10,7 +10,7 @@
 <img src='http://postgresapp.com/img/PostgresAppIconLarge.png'>
 
 1.  Run the command `brew install postgres`
-2.  Let's install **Postgres.app**
+2.  Let's install [Post gres app](https://postgresapp.com/)
 3.  Move the app to your `/Applications/` directory.
 4.  Now, double-click it to run it.
 5.  Select **Open Postgres** in the bottom-right corner.
