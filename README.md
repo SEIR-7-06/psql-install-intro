@@ -128,6 +128,4 @@ Let's think about this. Wouldn't it be nice if we just had a script that we coul
 
 
 
-#### Migrations Lab
 
-We're going to build do something fun!
