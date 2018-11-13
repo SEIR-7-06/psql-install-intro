@@ -58,7 +58,7 @@
 
 * We specify to `CREATE TABLE name_of_table();`
 * We pass in attribute names inside of the parenthases.
-* `CREATE TABLE students (id SERIAL PRIMARY KEY, name varchar(255), email String);`
+* `CREATE TABLE students (id SERIAL PRIMARY KEY, name varchar(255), email varchar(200));`
 * Let's break this down...
 * SERIAL PRIMARY KEY sets our Primary Key.
 * We can now define the rest of our values using `attribute_name` with an associated `value_type`
