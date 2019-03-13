@@ -23,7 +23,7 @@
 * We've provided a cheatsheet of Postgres commands to help you out.
 * First thing's first - let's run `psql postgres` on the terminal 
 * Now, let'ssee if we have any databases!
-* `\l` to list **all** databses using the following command:
+* `\l` to list **all** databses OR use this query `SELECT * FROM pg_database;`
 
 #### Creating a database
 
@@ -56,13 +56,28 @@ CREATE TABLE courses
 * SERIAL PRIMARY KEY sets our Primary Key.
 * We can now define the rest of our values using `attribute_name` with an associated `value_type`
 * We organize them using commas to split them up.
-* You can also use `\d+ tablename` to describe the table.
+* You can also use `\d+ tablename` to describe the table OR run query:
+
+```sql
+SELECT * FROM information_schema.COLUMNS
+WHERE TABLE_NAME = 'courses';
+```
 
 #### Listing tables in a database
 
 * To see a list of all tables in a database...
-* Run the following command:
-* `\dt`
+* Run the following command 
+		`\dt` 
+		OR run this query 
+```sql
+SELECT
+*
+FROM
+pg_catalog.pg_tables
+WHERE
+schemaname != 'pg_catalog'
+AND schemaname != 'information_schema';
+```
 
 
 #### Adding rows to a database
