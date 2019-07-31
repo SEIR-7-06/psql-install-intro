@@ -174,12 +174,14 @@ SELECT * FROM course WHERE id = 1;
 
 #### Updating row in a table
 
+* If `WHERE` clause is not given update will update all the records in the table
+
 ```sql
 UPDATE course
-SET code = 'SE1' 
+SET code = 'SEI', name='Software Engineering Immersive' 
 WHERE id = 1;
 ```
-* If `WHERE` clause is not given update will update all the records in the table
+* Run `Select` query again to see the updated row.
 
 #### Deleting row from a table
 
@@ -192,32 +194,8 @@ DELETE FROM course where id = 1;
 Nice, eh?
 
 ### Independent Practice
-Take 10 minutes to practice Creating, Reading, Updating, Deleting (CRUD) data in `course` table.
+Take 10 minutes to practice writing queries for Creating, Reading, Updating, Deleting (CRUD) data in the `course` table.
 
-Now, let's create another table 'student' where each student can take one course at a time.
-
-```sql
-CREATE TABLE student 
-(id SERIAL PRIMARY KEY, name VARCHAR(255), email VARCHAR(200), 
-course_id INTEGER REFERENCES course(id));
-
-INSERT INTO student (name, email, course_id)
-VALUES
-('Jimbo', 'jimbo@ga.co', 1);
-
-SELECT * FROM student;
-```
-
-#### Deleting rows from a database
-
-* We use the **Delete** keyword!
-* We can be specific like SELECT!
-
-```sql
-DELETE FROM course WHERE id = 1;
-```
-* What do you see?
-* The error 'violates foreign key' is generated when you try to delete a row that is used as a reference in another table(student).
 
 ## Relationships in Relational Databases
 
@@ -263,6 +241,34 @@ We use a join table! It's a table with the ID's of BOTH, thus connecting our dat
 A join table might be JUST a join table, meaning it might have nothing but the two IDs, or it might represent something too! 
 
 For example, the join table above represents a real thing: **enrollment**! Enrollment might have some of it's own properties, like start and stop dates. Other times, the join table might not really represent anything that has a real life analogy, and it might not need to hold any data besides the ID's. 
+
+### Code Along
+
+We will just see a simple example of how relationships are implemented in SQL database. Django will do a lot of heavy lifting for us so we don't have to know the query in detail.
+
+Let's create another table `student` where each student can take one course at a time, but a course can have many students. So this is an example of one-to-many relationship between `course` and `student`.
+
+```sql
+CREATE TABLE student 
+(id SERIAL PRIMARY KEY, name VARCHAR(255), email VARCHAR(200), 
+course_id INTEGER REFERENCES course(id));
+
+INSERT INTO student (name, email, course_id)
+VALUES
+('Jimbo', 'jimbo@ga.co', 1);
+
+SELECT * FROM student;
+```
+
+#### Foreign Key Constraint
+
+* Try to now delete the course where course id is 1
+
+```sql
+DELETE FROM course WHERE id = 1;
+```
+* What do you see?
+* The error 'violates foreign key' is generated when you try to delete a row that is used as a reference in another table(student).
 
 
 
