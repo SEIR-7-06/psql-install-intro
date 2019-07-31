@@ -43,7 +43,7 @@ Great. Now let's break down that acronym: ACID.
 
 The goal of any good database is to be **ACID compliant**, meaning that all transactions that occur abide by these rules.
 
-### Make It Real
+### Independent Practice: Make It Real
 
 We know what ACID is all about. Now, it's time to bring it into real life!
 
@@ -170,6 +170,23 @@ SELECT * FROM course;
 
 ```sql
 SELECT * FROM course WHERE id = 1;
+```
+
+#### Updating row in a table
+
+```sql
+UPDATE course
+SET code = 'SE1' 
+WHERE id = 1;
+```
+* If `WHERE` clause is not given update will update all the records in the table
+
+#### Deleting row from a table
+
+* We can delete specific rows from our table using **WHERE** clause
+
+```sql
+DELETE FROM course where id = 1;
 ```
 
 Nice, eh?
