@@ -12,7 +12,7 @@ Inside a database, we carry out basic actions such as **c**reating, **r**eading,
 
 In modern web development, there are different categories of databases: relational (aka, SQL), NoSQL, key-value, and more. We're focusing on relational databases here.
 
-SQL stands for **Structured Query Language**, and it's a language used to manage and get information from what are considered "relational" databases (we'll talk more about SQL next lesson).
+SQL stands for **Structured Query Language**, and it's a language used to manage and get information from what are considered "relational" databases.
 
 We call these databases "relational" because different models (or pieces of data) can be linked to other models — i.e., "related." Relational databases store data in a **table**; think of it like a spreadsheet. The table holds all of the data for one model, while the columns define the model's attributes; we often call columns "attributes" or "fields." A row is an instance (remember instantiation!); think of it as a unique copy of the blueprint that is our model (often called a "record").
 
