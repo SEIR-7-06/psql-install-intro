@@ -23,19 +23,10 @@ We call these databases "relational" because different models (or pieces of data
 
 #### Installing Postgres
 
-1.  Run the command `brew install postgres`
-2.  Let's install using-
-
-	3.  [Post gres app](https://postgresapp.com/)
-	3.  Move the app to your `/Applications/` directory.
-	4.  Now, double-click it to run it.
-	5.  Select **Open Postgres** in the bottom-right corner.
-			
-			OR
-			
-	1. Run `brew tap homebrew/services` to install brew services.
-	2. Then run `brew services start postgresql` to start postgres as a background service
-	3. To stop postgres manually, run `brew services stop postgresql`. You can also use brew services to restart Postgres `brew services restart postgresql`
+1. Run the command `brew install postgres`	
+2. Run `brew tap homebrew/services` to install brew services.
+3. Then run `brew services start postgresql` to start postgres as a background service
+4. To stop postgres manually, run `brew services stop postgresql`. You can also use brew services to restart Postgres `brew services restart postgresql`
 
 
 ####  List All Databases
