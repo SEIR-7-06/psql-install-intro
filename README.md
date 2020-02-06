@@ -222,4 +222,75 @@ DELETE FROM course WHERE id = 1;
 
 
 
+## ACID Transactions
+
+Let's first take a look at a real world [example](https://www.youtube.com/embed/H59Y4sZ6eb4?start=0&end=58)
+
+- What do you think was the problem here? 
+- How do you think that can be resolved? 
+
+This is where ACID transactions come in. ACID is a series of principles that should be followed whenever you modify a database. The goal in using these principles is to maintain a stable, consistent database, both before and after whatever operation you're performing.
+
+These properties are the reason why all banking, healthcare, financial companies use relational databases OR a database compliant with these properties.
+
+### But What is a Transaction?
+
+Let's learn from the same [master](https://www.youtube.com/embed/H59Y4sZ6eb4?start=59&end=106).
+
+A transaction is a single unit of work that modifies a database. It might be several individual actions, but think of them as a unit, all working on the same task. 
+
+Let's take another example. This time we will talk about banking. Say, 1st of every month your salary of $1000 is credited to your account. You the big saver sends half of that money into your savings account. After logging into your account, as soon as you initiate the transfer what all do you think will happen in the server. Assuming your initial balance was 0 in both the accounts.
+
+-  Read $1000 from Checking
+-  Deduct $500 from $1000
+-  Update balance to $500
+-  Read $0 balance from Savings
+-  Add $500 to $0
+-  Update balance to $500
+
+These 6 steps to transfer money between your two accounts is ONE TRANSACTION.
+
+### So, What's ACID
+
+![](https://media.giphy.com/media/l3vR0BOPKtgPE1tgk/giphy.gif)
+
+Great. Now let's break down that acronym: **ACID**.
+
+**Atomicity**: Transactions are all or nothing; they go all in. There's no cutting corners with transactions. However you want to put it, *atomicity* just means that all parts of a transaction take place at once and run to completion, or it doesn't happen at all.
+ 
+In the above example, either all the 6 steps will happen to transfer money from 1 account to another or none will occur. Even if 1 step fails, the entire transaction will be rolled back. That means Checking will continue to have $1000 as balance and Savings will have 0. 
+
+**Consistency**: The database should be consistent before and after the transaction happens; kind of like how energy can neither be created nor destroyed, it just changes forms. If you're moving or removing something in a database, it has to go *somewhere*. This principle is pretty stringent: If the transaction can't be fully completed at that time, everything will roll back to the original version.
+
+In the above example, what if the adding $500 to Savings account failed. Without rolling back the entire transaction you now have inconsistent data. You are actually out of 500 dollars and there is no way to recover your hard earned money. Imagine that!
+
+**Isolation**: Transactions must be able to occur independently, without interference, while still maintaining the ultimate goal of *consistency* in the database. What's more, transactions must be able to happen concurrently while still keeping things consistent.
+
+In the above example, if while making the transfer you also decide to withdraw $600 from your Checking account. Depending on the step your previous transaction is in you can get two very different and dangerous results. You may end up overdrawing your account, which is very very bad. Hence, transactions must take place in isolation and changes should be visible only after they have been made to the main memory.
+
+**Durability:** Once a transaction is complete, it doesn't just say "See ya!" and ride off into the sunset. Any changes made must be permanently stored in the database's memory. And, if something goes wrong, the record of the transaction still exists and is always accessible in the database.
+
+So just for review,
+
+![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191121102921/ACID-Properties.jpg)
+[source](https://www.geeksforgeeks.org/acid-properties-in-dbms/)
+
+### Exercise: Make It Real
+
+We know what ACID is all about. Now, it's time to bring it into real life!
+
+We've listed a few real-world scenarios depicting database transactions that happen all the time. With a partner, review them and think through:
+
+- With which ACID principle(s) is the scenario dealing?
+- Assuming the DB is ACID compliant, what should happen?
+- What would happen if the DB was **not** ACID compliant? What could go wrong in this transaction?
+
+**Meet the Scenarios**
+
+- **Scenario 1**: You and your brother are both trying to buy the same 12-pack of Pamplemousse La Croix from Amazon at the same time. There are 10 packs available; your brother wants five and you want six.
+- **Scenario 2**: You're trying to buy tickets from Ticketmaster to see Taylor Swift's new tour. The tickets go on sale at 12 p.m., and you're ready to purchase as soon as the clock strikes noon. After being stuck in the digital waiting room for some time, you’re finally able to add those tickets to your cart, make the purchase, and get your confirmation. All of a sudden, the site goes down (probably overrun with ravenous T Swift fans).
+- **Scenario 3**: You send a five-page document to the printer. While it's working on Page 3, the printer runs out of toner.
+
+
+
 
