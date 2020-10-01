@@ -45,9 +45,14 @@ We call these databases "relational" because different models (or pieces of data
 * This is pretty straigtforward!
 * Let's tell Postgres to create a database with a name!
 * Syntax **matters**. Close each statement with a `;`
-* `CREATE DATABASE ga;`
+* Create a database one of two ways:
+	- From the command line: `createdb database_name`
+	- In the `psql` shell: `CREATE DATABASE database_name;`
+* Let's create a database called `ga` from inside the `psql` shell: `CREATE DATABASE ga;`
 * Run the list command to see our new database!
-* To remove a database use `DROP DATABASE databasename;`
+* To remove a database use one of two ways:
+	- From the command line: `dropdb database_name`
+	- In the `psql` shell: `DROP DATABASE database_name;`
 
 #### Connecting to your database
 
@@ -149,6 +154,15 @@ Nice, eh?
 
 ### Independent Practice
 Take 10 minutes to practice writing queries for Creating, Reading, Updating, Deleting (CRUD) data in the `course` table.
+
+Here are some ideas of courses to create, along with their codes:
+
+* User Experience Design Immersive, UXDI
+* Data Science Immersive, DSI
+* Python, Py
+* JavaScript, JS
+* MongoDB, MDB
+* Structured Query Language, SQL
 
 
 ## Relationships in Relational Databases
