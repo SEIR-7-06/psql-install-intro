@@ -21,15 +21,16 @@ We call these databases "relational" because different models (or pieces of data
 
 ## Code Along: Structured Query Language (SQL)
 
-#### Installing Postgres (Mac)
+#### Installing Postgres v12.x (Mac)
 
 1. Run the command `brew install postgres`	
 2. Run `brew tap homebrew/services` to install brew services.
 3. Then run `brew services start postgresql` to start postgres as a background service
 4. To stop postgres manually, run `brew services stop postgresql`. You can also use brew services to restart Postgres `brew services restart postgresql`
 
-#### Installing Postgres (Ubuntu)
-1. Follow instructions [found here](https://itsfoss.com/install-postgresql-ubuntu/) 
+#### Installing Postgres v12.x for nonMac
+1. **Ubuntu** [Steps here](https://www.postgresql.org/download/linux/ubuntu/) 
+2. **Windows** [Installer here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
 
 ---
 
