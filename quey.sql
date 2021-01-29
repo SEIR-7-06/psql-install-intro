@@ -1,0 +1,50 @@
+
+-- TO RUN THIS FILE IN TERMINAL
+-- psql -f <filename> -d ga
+
+-- TO SEE ALL TABLES ON DATABASE
+-- \dt
+
+-- TO SEE THE COLUMNS ON A TABLE
+-- \d <table name>
+
+-- TO QUIT POSTGRES
+-- \q
+
+-- DELETE THE DATABASE IF IT EXISTS
+-- DROP DATABASE IF EXISTS ga;
+
+-- CREATE ga Database
+-- CREATE DATABASE ga;
+
+-- CREATE COURSE TABLE
+-- CREATE TABLE course
+-- (id SERIAL PRIMARY KEY, name VARCHAR(255), code VARCHAR(200));
+
+
+-- CREATE NEW COURSE ON COURSE TABLE
+-- INSERT INTO course (name, code)
+-- VALUES ('Web Development Immersive', 'WDI');
+
+
+-- GET ALL RECORDS FROM COURSE TABLE
+SELECT * FROM course;
+
+-- CREATE ANOTHER NEW COURSE ON COURSE TABLE
+-- INSERT INTO course (name, code)
+-- VALUES ('Data Science', 'DSI');
+
+-- SELECT ONE RECORD FROM COURSE TABLE BY ID
+-- SELECT * FROM course WHERE id = 2;
+
+
+-- SELECT ONE RECORD FROM COURSE TABLE BY NAME
+-- SELECT * FROM course WHERE name = 'Web Development Immersive';
+
+-- UPDATE ONE RECORD BY ID
+UPDATE course
+SET name = 'Software Engineering Immersive', code = 'SEI'
+WHERE id = 1;
+
+-- GET ALL RECORDS FROM COURSE TABLE
+SELECT * FROM course;
