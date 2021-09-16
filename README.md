@@ -26,7 +26,10 @@ We call these databases "relational" because different models (or pieces of data
 1. Run the command `brew install postgres`	
 2. Run `brew tap homebrew/services` to install brew services.
 3. Then run `brew services start postgresql` to start postgres as a background service
-4. To stop postgres manually, run `brew services stop postgresql`. You can also use brew services to restart Postgres `brew services restart postgresql`
+
+And you're good to go!
+
+You shouldn't need to run these commands right now. but for reference, to stop postgres manually, run `brew services stop postgresql`. You can also use brew services to restart Postgres `brew services restart postgresql`
 
 #### Installing Postgres v12.x for nonMac
 1. **Ubuntu** [Steps here](https://www.postgresql.org/download/linux/ubuntu/) 
