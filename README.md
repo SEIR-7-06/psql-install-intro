@@ -33,7 +33,7 @@ And you're good to go!
 
 To open the PostgreSQL shell
 ```bash
-psql
+postgres psql
 ```
 
 To exit the shell
